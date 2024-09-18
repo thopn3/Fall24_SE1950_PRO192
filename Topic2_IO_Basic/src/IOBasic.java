@@ -1,3 +1,5 @@
+import Bussiness.Employees.*;
+import Bussiness.Manager.*;
 import java.util.Scanner;
 
 public class IOBasic {
@@ -30,5 +32,8 @@ public class IOBasic {
             sum += item;
         }
         System.out.println(sum);
+        
+        Bussiness.Employees.Test t1 = new Bussiness.Employees.Test();
+        Bussiness.Manager.Test t2 = new Bussiness.Manager.Test();
     }
 }
