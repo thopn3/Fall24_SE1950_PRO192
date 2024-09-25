@@ -1,4 +1,5 @@
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class EmployeeManagement {
@@ -51,10 +52,27 @@ public class EmployeeManagement {
     }
     
     public void searchEmployeesByName(){
-        System.out.println("Search method");
+        String searchName;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Please, enter employee name to search: ");
+        searchName = sc.nextLine();
+        
+        boolean status = false;
+        System.out.println("Search result:");
+        for(Employee e : listEmployees){
+            if(e.getEmployeeName().toLowerCase().startsWith(searchName.toLowerCase())){
+                System.out.println(e);
+                status = true;
+            }
+        }
+        if(status == false){
+            System.out.println("Employees not found");
+        }
     }
     
     public void sortEmployeesByName(){
-        System.out.println("Sort method");
+        System.out.println("List of employees sorted:");
+        Arrays.sort(listEmployees, 0, listEmployees.length-1, (e1, e2) -> e1.getEmployeeName().compareToIgnoreCase(e2.getEmployeeName()));
+        this.outputEmployees();
     }
 }

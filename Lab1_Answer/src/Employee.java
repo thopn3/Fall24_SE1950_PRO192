@@ -9,6 +9,13 @@ public class Employee {
     private String dob;
     private boolean isMarried;
 
+    // Getter methods
+
+    public String getEmployeeName() {
+        return employeeName;
+    }
+    
+    
     // Dinh nghia contructor -> Khoi tao doi tuong, gan gia tri ban dau cho doi tuong
     public Employee(int employeeId, String employeeName, String gender, String dob, boolean isMarried) {
         this.employeeId = employeeId;
